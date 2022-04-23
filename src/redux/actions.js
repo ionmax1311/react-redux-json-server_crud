@@ -23,10 +23,13 @@ const getUser = (user) => ({
 	payload: user,
 });
 
+const devEnv = process.env.NODE_ENV !== "production";
+const { REACT_APP_API_DEV, REACT_APP_API_PROD } = process.env;
+
 export const loadUsers = () => {
 	return function (dispatch) {
 		axios
-			.get(`${process.env.REACT_APP_API}`)
+			.get(`${devEnv ? REACT_APP_API_DEV : REACT_APP_API_PROD}`)
 			.then((resp) => {
 				dispatch(getUsers(resp.data));
 			})
@@ -37,7 +40,7 @@ export const loadUsers = () => {
 export const deleteUser = (id) => {
 	return function (dispatch) {
 		axios
-			.delete(`${process.env.REACT_APP_API}/${id}`)
+			.delete(`${devEnv ? REACT_APP_API_DEV : REACT_APP_API_PROD}/${id}`)
 			.then((resp) => {
 				dispatch(userDeleted());
 				dispatch(loadUsers());
@@ -49,7 +52,7 @@ export const deleteUser = (id) => {
 export const addUser = (user) => {
 	return function (dispatch) {
 		axios
-			.post(`${process.env.REACT_APP_API}`, user)
+			.post(`${devEnv ? REACT_APP_API_DEV : REACT_APP_API_PROD}`, user)
 			.then((resp) => {
 				dispatch(userAdded());
 				dispatch(loadUsers());
@@ -61,7 +64,7 @@ export const addUser = (user) => {
 export const getSingleUser = (id) => {
 	return function (dispatch) {
 		axios
-			.get(`${process.env.REACT_APP_API}/${id}`)
+			.get(`${devEnv ? REACT_APP_API_DEV : REACT_APP_API_PROD}/${id}`)
 			.then((resp) => {
 				dispatch(getUser(resp.data));
 			})
@@ -72,7 +75,10 @@ export const getSingleUser = (id) => {
 export const updateUser = (user, id) => {
 	return function (dispatch) {
 		axios
-			.put(`${process.env.REACT_APP_API}/${id}`, user)
+			.put(
+				`${devEnv ? REACT_APP_API_DEV : REACT_APP_API_PROD}/${id}`,
+				user,
+			)
 			.then((resp) => {
 				dispatch(userUpdated());
 				dispatch(loadUsers());
