@@ -1,0 +1,53 @@
+{
+  "user": [
+    {
+      "name": "Tommy1",
+      "email": "tommy@gmail.com",
+      "contact": "3456789",
+      "address": "Japan",
+      "id": 1
+    },
+    {
+      "name": "Adam ",
+      "email": "adam@gmail.com",
+      "contact": "123456799",
+      "address": "Australia",
+      "id": 2
+    },
+    {
+      "name": "Robert Braun",
+      "email": "robert@gmail.com",
+      "contact": "76856899",
+      "address": "USA",
+      "id": 3
+    },
+    {
+      "name": "Alex",
+      "email": "alex@gmail.com",
+      "contact": "98796986",
+      "address": "India",
+      "id": 4
+    },
+    {
+      "name": "Paulo Catana",
+      "email": "paulo@gmail.com",
+      "contact": "8672365837",
+      "address": "Brazil",
+      "id": 5
+    },
+    {
+      "name": "James Bond",
+      "email": "james@gmail.com",
+      "contact": "3467738",
+      "address": "China",
+      "id": 6
+    },
+    {
+      "name": "Samuel Adamo",
+      "email": "samuel@gmail.com",
+      "contact": "346347347",
+      "address": "Canada",
+      "id": 7
+    }
+  ]
+}
